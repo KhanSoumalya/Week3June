@@ -1,0 +1,32 @@
+git remote add pranay https://
+
+
+###############################################################
+@Embedded
+    @AttributeOverrides(value = {
+      @AttributeOverride(name = "street", column = @Column(name = "streetAddr")),
+      @AttributeOverride(name = "pincode", column = @Column(name = "postcode"))
+    })
+private Address address;
+
+
+###################################################################
+@Embeddable
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class Address {
+	
+	private String street;
+	private String pincode;
+	private String location;
+	private String state;
+
+}
+
+#####################################################################
+@GetMapping("/all/{id}")
+	private WebEntity userInput(@PathVariable (value="id")int someVariable)
+	{
+		return wsr.findByUserValue(someVariable);
+	}
